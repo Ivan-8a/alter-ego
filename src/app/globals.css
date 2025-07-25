@@ -22,7 +22,7 @@ body {
 body {
   color: var(--foreground); /* Aplica la custon variable definida en :root para el color del texto */
   background: var(--background); /* Aplica la custon variable definida en :root para el fondo */
-  font-family: Arial, Helvetica, sans-serif; /* Define la jerarquia de fuentes */
+  font-family: Georgia, 'Times New Roman', Times, serif;
   -webkit-font-smoothing: antialiased; /* Mejoran la renderización de fuentes en navegadores WebKit y Firefox en macOS */
   -moz-osx-font-smoothing: grayscale; /* Mejoran la renderización de fuentes en navegadores WebKit y Firefox en macOS */
 }
@@ -51,4 +51,26 @@ a {
     /* Le dice al navegador que use controles en modo oscuro */
     color-scheme: dark;
   }
+}
+
+.gradient-text{
+  background: linear-gradient(135deg, #000000 0%, #b39060 100%); /* Se aplica el degradado a el fondo del elemento texto no a texto como tal */
+  background-clip: text; /* Se declara que el recorte se va hacer al texto */
+  -webkit-background-clip: text; /* Se aplica solo el degradado en la figura que deja el texto */
+  -webkit-text-fill-color: transparent; /* Se hace el texto transparente para que de el efecto de degradado */
+  color: black; /* fallback por si falla */
+}
+
+.button {
+  background-color: #000000;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px; /* rounded-full */
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #374151; /* hover:bg-gray-800 */
 }
