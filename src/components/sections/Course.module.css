@@ -1,0 +1,137 @@
+.section{
+    padding: 5rem 0;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: clamp(2.25rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #000000 0%, #b39060 100% );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: black;
+}
+
+.description {
+    max-width: 56rem;
+    margin: 0 auto;
+}
+
+.description p {
+    font-size: 1.25rem;
+    line-height: 1.625;
+    color: #374151
+}
+
+.highlightText {
+    font-weight: 600;
+    color: #000000;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .description p {
+    font-size: 1.125rem;
+  }
+}
+
+.benefitCard {
+  background-color: #faf7f2; /* color de fondo suave */
+  border: 1px solid #e8dcc6; /* borde claro */
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  text-align: left;
+  max-width: none;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+            box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.cardTitle {
+  margin-top: 16px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000000; /* casi negro */
+}
+
+.cardDescription {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #4b5563; /* gris medio */
+  line-height: 1.5;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+  justify-items: center;
+}
+
+.benefitCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.inspirationalSection {
+  text-align: center;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.inspirationalCard{
+  background: linear-gradient(to right, #f5f0e8, #ffffff);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #e8dcc6;
+}
+
+.inspirationalText {
+  font-size: 1.25rem;
+  line-height: 1.625;
+  color: #374151;
+  margin-bottom: 1.5rem;
+}
+
+.inspirationalSubtext {
+  font-size: 1.125 rem;
+  color: #92734d
+}

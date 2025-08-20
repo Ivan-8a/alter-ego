@@ -1,5 +1,6 @@
 import styles from "./page.module.css";
 import Navbar from "@/components/layout/Navbar";
+import Course from "@/components/sections/Course";
 import Hero from "@/components/sections/Hero";
 
 export default function Home() {
@@ -11,7 +12,8 @@ export default function Home() {
         ctaHref="#curso"
         // imageSrc="/path/to/your/image.jpg" // Opcional: agrega tu imagen
         // imageAlt="Descripción de tu imagen"
-      />
+        />
+        <Course/>
       </main>
     </>
   );
