@@ -41,3 +41,17 @@
     display: block;
 }
 
+@media (max-width: 768px) {
+  .videoSection {
+    padding: 3rem 0;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}
