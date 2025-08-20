@@ -103,7 +103,7 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-bottom: 4rem;
-  justify-items: center;
+  
 }
 
 .benefitCard:hover {
@@ -127,7 +127,7 @@
 .inspirationalText {
   font-size: 1.25rem;
   line-height: 1.625;
-  color: #374151;
+  color: #000000;
   margin-bottom: 1.5rem;
 }
 
