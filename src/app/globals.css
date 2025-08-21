@@ -1,8 +1,26 @@
 /* Pseudo selector que define dos custom variables que tienen la 
 intencion de aplicarse al fondo de la pagina */
 :root {
+  /* Colores base */
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Gradientes */
+  --gradient-primary: linear-gradient(135deg, #000000 0%, #b39060 100%);
+
+  /* Colores especificos*/
+  --beige-100: #faf7f2;
+  --beige-200: #e8dcc6;
+  --beige-300: #dbc7a4;
+  --beige-400: #b39060;
+
+  /* Transiciones */
+  --transition-default: all 0.3 ease;
+
+  /* Bordes*/
+  --border-radius-full: 9999px;
+  --border-radius-lg: 1.5rem;
+  --border-radius-md: 1rem;
 }
 /* Condicional que detecta si el sistema del usuario prefiere modo obscuro, 
 si es asi se aplican los siguientes valores a las custom variables */
@@ -54,7 +72,7 @@ a {
 }
 
 .gradient-text{
-  background: linear-gradient(135deg, #000000 0%, #b39060 100%); /* Se aplica el degradado a el fondo del elemento texto no a texto como tal */
+  background: var(--gradient-primary); /* Se aplica el degradado a el fondo del elemento texto no a texto como tal */
   background-clip: text; /* Se declara que el recorte se va hacer al texto */
   -webkit-background-clip: text; /* Se aplica solo el degradado en la figura que deja el texto */
   -webkit-text-fill-color: transparent; /* Se hace el texto transparente para que de el efecto de degradado */
