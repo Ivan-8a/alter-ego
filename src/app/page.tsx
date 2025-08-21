@@ -4,6 +4,7 @@ import Course from "@/components/sections/Course";
 import Hero from "@/components/sections/Hero";
 import Video from "@/components/sections/Video";
 import CallToAction from "@/components/sections/CallToAction";
+import Footer from "@/components/sections/Footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Course/>
         <Video/>
         <CallToAction/>
+        <Footer/>
       </main>
     </>
   );
