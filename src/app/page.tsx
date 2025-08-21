@@ -3,6 +3,7 @@ import Navbar from "@/components/layout/Navbar";
 import Course from "@/components/sections/Course";
 import Hero from "@/components/sections/Hero";
 import Video from "@/components/sections/Video";
+import CallToAction from "@/components/sections/CallToAction";
 
 export default function Home() {
   return (
@@ -15,7 +16,8 @@ export default function Home() {
         // imageAlt="Descripción de tu imagen"
         />
         <Course/>
-        <Video></Video>
+        <Video/>
+        <CallToAction/>
       </main>
     </>
   );

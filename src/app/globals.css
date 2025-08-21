@@ -24,12 +24,12 @@ intencion de aplicarse al fondo de la pagina */
 }
 /* Condicional que detecta si el sistema del usuario prefiere modo obscuro, 
 si es asi se aplican los siguientes valores a las custom variables */
-@media (prefers-color-scheme: dark) {
+/*@media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+}*/
 
 html,
 body {
