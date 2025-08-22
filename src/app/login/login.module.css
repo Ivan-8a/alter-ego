@@ -1,0 +1,90 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f5f5f5;
+}
+
+.card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 380px;
+    transition: all 0.3s ease;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #000000 0%, #b39060 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem
+}
+
+.input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.75rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input:focus {
+    border-color: #b39060;
+}
+
+.button {
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #000000 0%, #b39060 100%);
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.02);
+}
+
+.toggle {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.toggle span {
+    color: #b39060;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle span:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 1.5rem;
+        margin: 0.5rem;
+    }
+    
+    .title {
+        font-size: 1.3rem;
+    }
+}
