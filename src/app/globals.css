@@ -37,6 +37,10 @@ body {
   overflow-x: hidden; /* Si falla en la prevencion oculta el exceso */
 }
 
+html {
+  scroll-behavior: smooth; /* 👈 aquí */
+}
+
 body {
   color: var(--foreground); /* Aplica la custon variable definida en :root para el color del texto */
   background: var(--background); /* Aplica la custon variable definida en :root para el fondo */

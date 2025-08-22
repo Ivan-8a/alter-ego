@@ -8,8 +8,8 @@ export default function Navbar() {
                     <h1 className="gradient-text">
                         alter-ego
                     </h1>
-                    <a href="#comprar" className='button'>
-                        OBTENER CURSO
+                    <a href="/login" className='button'>
+                        INICIAR SESION
                     </a>
                 </div>
             </div>
