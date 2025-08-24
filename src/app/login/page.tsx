@@ -4,6 +4,7 @@ import { useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import styles from "./login.module.css";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation"
 
 const prettyAuthError = (raw: string) => {
   const msg = raw.toLowerCase();
@@ -20,9 +21,15 @@ const prettyAuthError = (raw: string) => {
 
 const LoginPage = () => {
   const [isRegister, setIsRegister] = useState(false);
-  const [form, setForm] = useState({ email: "", password: "" });
-  const [error, setError] = useState<string | null>(null);
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+    confirmpassword: "",
+    username: "",
+  });
   const [loading, setLoading] = useState(false);
+
+  const router = useRouter()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -36,6 +43,11 @@ const LoginPage = () => {
       return;
     }
 
+    if(isRegister && form.password !== form.confirmpassword){
+            toast.error("Las contraseñas no coinciden");
+            return;
+        }
+
     setLoading(true);
 
     try {
@@ -43,6 +55,11 @@ const LoginPage = () => {
         const { data, error } = await supabase.auth.signUp({
           email: form.email,
           password: form.password,
+          options: {
+            data: {
+              username: form.username,
+            },
+          },
         });
 
         if (error) {
@@ -54,7 +71,12 @@ const LoginPage = () => {
               ? "Cuenta creada ✅. Revisa tu correo para confirmar tu cuenta."
               : "Cuenta creada y sesión iniciada 🎉"
           );
-          setForm({ email: "", password: "" });
+          setForm({
+            email: "",
+            password: "",
+            confirmpassword: "",
+            username: "",
+          });
         }
       } else {
         const { data, error } = await supabase.auth.signInWithPassword({
@@ -63,12 +85,16 @@ const LoginPage = () => {
         });
 
         if (error) {
-            toast.error(prettyAuthError(error.message))
+          toast.error(prettyAuthError(error.message));
         } else {
-            toast.success(
-                "Inicio de sesion exitoso"
-            );
-            setForm({ email: "", password: ""})
+          toast.success("Inicio de sesion exitoso");
+          setForm({
+            email: "",
+            password: "",
+            confirmpassword: "",
+            username: "",
+          });
+          router.push("/")
         }
       }
     } catch (err: any) {
@@ -84,6 +110,17 @@ const LoginPage = () => {
           {isRegister ? "Crear cuenta" : "Iniciar sesion"}
         </h1>
         <form className={styles.form} onSubmit={handleSubmit}>
+          {isRegister ? (
+            <input
+              type="text"
+              name="username"
+              placeholder="Nombre"
+              value={form.username}
+              onChange={handleChange}
+              className={styles.input}
+              required
+            />
+          ) : null}
           <input
             type="email"
             name="email"
@@ -102,6 +139,17 @@ const LoginPage = () => {
             className={styles.input}
             required
           />
+          {isRegister ? (
+            <input
+              type="password"
+              name="confirmpassword"
+              placeholder="Confirmar contraseña"
+              value={form.confirmpassword}
+              onChange={handleChange}
+              className={styles.input}
+              required
+            />
+          ) : null}
           <button type="submit" className={styles.button} disabled={loading}>
             {loading
               ? "Procesando..."

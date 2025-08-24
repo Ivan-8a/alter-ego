@@ -68,12 +68,13 @@ a {
 }
 
 /* Solo se aplica si el usuario tiene modo oscuro activado */
+/*
 @media (prefers-color-scheme: dark) {
   html {
-    /* Le dice al navegador que use controles en modo oscuro */
     color-scheme: dark;
   }
-}
+}*/
+
 
 .gradient-text{
   background: var(--gradient-primary); /* Se aplica el degradado a el fondo del elemento texto no a texto como tal */

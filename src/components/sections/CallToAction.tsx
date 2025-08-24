@@ -12,7 +12,7 @@ const CallToAction = () => {
                         Descubre como conectar autenticamente con tus clientes
                     </p>
                     <a href="#contacto" className={styles.ctaButton}>
-                        Quiro saber mas
+                        Comienza ahora
                     </a>
                 </div>
             </div>
