@@ -1,4 +1,5 @@
 import styles from './Navbar.module.css';
+import BuyButton from '../sections/BuyButton';
 
 export default function Navbar() {
     return (
@@ -8,9 +9,9 @@ export default function Navbar() {
                     <h1 className="gradient-text">
                         alter-ego
                     </h1>
-                    <a href="/login" className='button'>
-                        INICIAR SESION
-                    </a>
+                    <BuyButton className='button'>
+                        OBTENER CURSO
+                    </BuyButton>
                 </div>
             </div>
         </nav>

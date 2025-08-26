@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import styles from "./login.module.css";
 import toast from "react-hot-toast";
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 
 const prettyAuthError = (raw: string) => {
   const msg = raw.toLowerCase();
@@ -30,6 +30,23 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(false);
 
   const router = useRouter()
+
+  const searchParams = useSearchParams();
+
+  const redirectTo = searchParams.get('redirect') || '/';
+
+  useEffect(() =>{
+    const checkUser = async () => {
+      const {data: {user}} = await supabase.auth.getUser();
+      if(user) {
+        router.push(redirectTo);
+      }
+    };
+
+    checkUser();
+  }, [router, redirectTo]);
+
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -77,6 +94,10 @@ const LoginPage = () => {
             confirmpassword: "",
             username: "",
           });
+
+          if (!needsEmailConfirm) {
+            router.push(redirectTo);
+          }
         }
       } else {
         const { data, error } = await supabase.auth.signInWithPassword({
@@ -94,7 +115,7 @@ const LoginPage = () => {
             confirmpassword: "",
             username: "",
           });
-          router.push("/")
+          router.push(redirectTo)
         }
       }
     } catch (err: any) {
