@@ -97,7 +97,7 @@ const Checkout = () => {
           <button
             onClick={handleCheckout}
             disabled={checkoutLoading}
-            className={styles.checkoutButton}
+            className={styles.btnWave}
           >
             {checkoutLoading ? 'Procesando...' : 'Comprar ahora'}
           </button>
