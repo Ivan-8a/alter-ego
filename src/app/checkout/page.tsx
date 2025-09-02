@@ -7,8 +7,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import styles from "./checkout.module.css";
 import type { User } from '@supabase/supabase-js'
 
-console.log("Stripe key:", process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY!);
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 const Checkout = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -46,7 +45,7 @@ const Checkout = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          priceId: 'price_1234567890',
+          priceId: 'price_1S2kkyKsW9IYxJas8jSjmBKQ',
           userId: user.id,
         }),
       });
