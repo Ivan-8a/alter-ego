@@ -40,4 +40,4 @@ El proyecto sigue una arquitectura organizada por secciones:
       Course.tsx    # Información del curso
       Video.tsx     # Reproductor o embed de video
       CallToAction.tsx
-      Footer.tsx
+      Footer.tsx 
