@@ -27,6 +27,8 @@ La página está estructurada en secciones modulares para facilitar el mantenimi
 
 El proyecto sigue una arquitectura organizada por secciones:
 
+
+
 ```bash
 /src
   /app
