@@ -91,9 +91,16 @@ const Checkout = () => {
 
         <div className={styles.checkoutSection}>
           <div className={styles.priceContainer}>
-            <span className={styles.price}>$99.00 USD</span>
+            <span className={styles.price}>$10.00 MXN</span>
             <span className={styles.priceNote}>pago único</span>
           </div>
+          {/* Agrega esto para que se vea profesional y honesto */}
+<div className={styles.testModeWarning}>
+  <small>⚠️ <strong>Modo de Prueba (Stripe Sandbox)</strong></small>
+  <small style={{ display: 'block', color: '#666', marginTop: '4px' }}>
+    Usa la tarjeta: 4242 4242 4242 4242
+  </small>
+</div>
           <button
             onClick={handleCheckout}
             disabled={checkoutLoading}

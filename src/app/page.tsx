@@ -19,8 +19,8 @@ export default function Home() {
         <Course/>
         <Video/>
         <CallToAction/>
-        <Footer/>
       </main>
+      <Footer/>
     </>
   );
 }
